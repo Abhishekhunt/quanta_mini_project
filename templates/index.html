@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Analysis Tool</title>
+    <link rel="stylesheet" href="/static/styles.css?v=1.0">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Breakout Analysis Tool</h1>
+        <form id="analysisForm">
+            <label for="ticker">Select Ticker:</label>
+            <select id="ticker" name="ticker">
+                <option value="" disabled selected>Choose a ticker</option>
+                <!-- Major US Stocks -->
+                <optgroup label="US Stocks">
+                    <option value="AAPL">Apple (AAPL)</option>
+                    <option value="MSFT">Microsoft (MSFT)</option>
+                    <option value="GOOGL">Alphabet (Google) (GOOGL)</option>
+                    <option value="AMZN">Amazon (AMZN)</option>
+                    <option value="TSLA">Tesla (TSLA)</option>
+                </optgroup>
+                <!-- Indices -->
+                <optgroup label="Stock Market Indices">
+                    <option value="^GSPC">S&P 500 (^GSPC)</option>
+                    <option value="^DJI">Dow Jones (^DJI)</option>
+                    <option value="^IXIC">Nasdaq (^IXIC)</option>
+                </optgroup>
+                <!-- Commodities -->
+                <optgroup label="Commodities">
+                    <option value="GC=F">Gold (GC=F)</option>
+                    <option value="SI=F">Silver (SI=F)</option>
+                    <option value="CL=F">Crude Oil (WTI) (CL=F)</option>
+                </optgroup>
+                <!-- Forex -->
+                <optgroup label="Forex">
+                    <option value="EURUSD=X">EUR/USD (EURUSD=X)</option>
+                    <option value="GBPUSD=X">GBP/USD (GBPUSD=X)</option>
+                </optgroup>
+                <!-- Cryptocurrencies -->
+                <optgroup label="Cryptocurrencies">
+                    <option value="BTC-USD">Bitcoin (BTC-USD)</option>
+                    <option value="ETH-USD">Ethereum (ETH-USD)</option>
+                </optgroup>
+            </select>
+
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required>
+
+            <label for="volume_threshold">Volume Breakout Threshold (%):</label>
+            <input type="number" id="volume_threshold" name="volume_threshold" required>
+
+            <label for="price_change_threshold">Price Change Threshold (%):</label>
+            <input type="number" id="price_change_threshold" name="price_change_threshold" required>
+
+            <label for="holding_period">Holding Period (days):</label>
+            <input type="number" id="holding_period" name="holding_period" required>
+
+            <button type="submit">Analyze</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+    <script src="static/scripts.js"></script>
+</body>
+</html>
